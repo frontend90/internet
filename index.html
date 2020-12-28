@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="catalog">
+
+
+  <div class="container">
+    <h2>Webdevkin. Интернет-магазин. Модульный Javascript</h2>
+    <br>
+    <ul class="nav nav-pills">
+      <li class="active"><a href="index.html">Каталог</a></li>
+      <li><a href="catalog-filter.html">Каталог с фильтрами</a></li>
+      <li><a href="catalog-pag.html">Каталог с пагинацией</a></li>
+      <li id="compare-tab"><a href="compare.html">Сравнение товаров<span class="badge"></span></a></li>
+      <li><a href="cart.html">Корзина<span id="total-cart-count" class="badge"></span></a></li>
+      <li><a href="order.html">Оформление заказа</a></li>
+    </ul>
+    <br>
+    <ul id="goods" class="list-unstyled">
+      <img src="img/index/loading.gif" alt="" rel="nofollow">
+    </ul>
+  </div>
+
+
+
+
+
+
+
+
+  <script id="catalog-template" type="text/template">
+    <% _.each(goods, function(good) { %>
+        <li class="good-item row">
+            <div class="col-md-4">
+                <img class="good-item__img" src="<%- good.img %>" />
+            </div>
+            <div class="col-md-8">
+                <div class="good-item__id">Артикул <%= good.id %></div>
+                <div class="good-item__name"><%- good.name %></div>
+                <div class="good-item__price"><%= good.price %> руб.</div>
+                <button 
+                    class="good-item__btn-add btn btn-info btn-sm js-add-to-cart"
+                    data-id="<%= good.id %>"
+                    data-name="<%- good.name %>"
+                    data-price="<%= good.price %>"
+                >Добавить в корзину</button>
+            </div>
+        </li>
+    <% }); %>
+</script>
+
+
+
+
+
+
+
+
+
+
+  <script src="js/libs/jquery.min.js"></script>
+  <script src="js/libs/underscore.min.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

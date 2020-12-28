@@ -1,0 +1,19 @@
+.small-good-item {
+  border: solid 1px gray;
+  padding: 5px;
+  list-style: none;
+  border-radius: 2px;
+}
+
+.small-good-item__img {
+  max-width: 60%;
+}
+
+.small-good-item__name {
+  color: steelblue;
+}
+
+.small-good-item__price {
+  color: red;
+}
+/*# sourceMappingURL=style.css.map */

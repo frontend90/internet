@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="js-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="catalogDB">
+
+
+    <div class="container">
+        <h2>Webdevkin. Интернет-магазин. Фильтры в каталоге</h2>
+        <br>
+        <ul class="nav nav-pills">
+            <li><a rel="nofollow" href="index.html">Каталог</a></li>
+            <li class="active"><a rel="nofollow" href="catalog-filter.html">Каталог с фильтрами</a></li>
+            <li><a href="catalog-pag.html">Каталог с пагинацией</a></li>
+            <li id="compare-tab"><a href="compare.html">Сравнение товаров<span class="badge"></span></a></li>
+            <li><a rel="nofollow" href="cart.html">Корзина<span id="total-cart-count" class="badge"></span></a></li>
+            <li><a rel="nofollow" href="order.html">Оформление заказа</a></li>
+        </ul>
+        <br>
+        <div id="filters" class="col-md-12">
+            <div class="btn-group">
+                <button type="button" data-category="0" class="btn btn-default active js-category">Все
+                    категории</button>
+                <button type="button" data-category="1" class="btn btn-default js-category">Ноутбуки</button>
+                <button type="button" data-category="2" class="btn btn-default js-category">Смартфоны</button>
+                <button type="button" data-category="3" class="btn btn-default js-category">Категория №2</button>
+                <button type="button" data-category="4" class="btn btn-default js-category">Категория №3</button>
+            </div>
+            <br>
+            <br>
+            <form id="filters-form" role="form">
+                <div class="col-md-4">
+                    <h4>Бренды</h4>
+                    <div id="brands">
+                        <div class="checkbox"><label><input type="checkbox" name="brands[]" value="1"> Apple</label>
+                        </div>
+                        <div class="checkbox"><label><input type="checkbox" name="brands[]" value="2"> Samsung</label>
+                        </div>
+                        <div class="checkbox"><label><input type="checkbox" name="brands[]" value="3"> Lenovo</label>
+                        </div>
+                        <div class="checkbox"><label><input type="checkbox" name="brands[]" value="4"> Что-то
+                                еще</label></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>Фильтр по ценам</h4>
+                    <div id="prices-label">5000 - 50000 руб.</div>
+                    <br>
+                    <input type="hidden" id="min-price" name="min_price" value="5000">
+                    <input type="hidden" id="max-price" name="max_price" value="50000">
+                    <div id="prices"></div>
+                </div>
+                <div class="col-md-4">
+                    <h4>Сортировка</h4>
+                    <br>
+                    <select id="sort" name="sort" class="form-control">
+                        <option value="price_asc">По цене, сначала дешевые</option>
+                        <option value="price_desc">По цене, сначала дорогие</option>
+                        <option value="rating_desc">По популярности</option>
+                        <option value="good_asc">По названию, A-Z</option>
+                        <option value="good_desc">По названию, Z-A</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+        <ul id="goods" class="col-md-12">
+            <li class="small-good-item row">
+                <div class="col-md-2">
+                    <img class="small-good-item__img" src="img/catalog-filter/acer_aspire.jpg" alt="" rel="nofollow">
+                </div>
+                <div class="col-md-10">
+                    <div class="small-good-item__name">Артикул 12, Acer Aspire</div>
+                    <div class="small-good-item__brand">Бренд: Acer</div>
+                    <div class="small-good-item__price">18000 руб.</div>
+                    <button class="small-good-item__btn-add btn btn-info btn-sm js-add-to-cart" data-id="12"
+                        data-name="Acer Aspire" data-price="18000">Добавить в корзину</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="js/libs/jquery.min.js" type="text/javascript"></script>
+    <script src="js/libs/underscore.min.js" type="text/javascript"></script>
+    <script src="js-ui/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="js/catalogDB.js" type="text/javascript"></script>
+    <script src="js/cart.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+</body>
+
+</html>
